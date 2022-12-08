@@ -1,0 +1,90 @@
+---
+import '../assets/scss/globals.scss'
+import SiteMeta from '../components/SiteMeta.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+const {
+  title = 'Astro',
+  description = 'A starter project with accessible features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.',
+  url,
+  image = '/social-preview-image.png',
+} = Astro.props
+---
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <SiteMeta
+      title={title}
+      description={description.substring(0, 100)}
+      url={
+        Astro.site 
+          ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
+          : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`
+      }
+      image={image}
+    />
+  </head>
+  <body>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <!-- <Footer /> -->
+  </body>
+</html>
+
+<style lang="scss">
+  // theme settings
+  :root {
+    --primary-color: 254, 174, 40;
+    --secondary-color: 151, 71, 255;
+    --support-color-dark: 13, 15, 15;
+    --support-color-darkest: 21, 21, 21;
+    --bg-gradient: linear-gradient(45deg, rgb(var(--support-color-darkest)), rgb(var(--support-color-dark)) 50%, rgb(var(--support-color-darkest)) 100%);
+    --text-gradient: linear-gradient(45deg, rgb(var(--primary-color)), rgb(var(--secondary-color)) 30%, white 60%);
+
+    --radius-small: 3px;
+    --radius-large: 6px;
+    --gap-default: 2rem;
+    --font-measure: 70ch;
+    --font-family-default: "Open Sans", sans-serif;
+    --font-family-special: "Open Sans", sans-serif;
+    --font-color: var(--neutral-100);
+    --action-color: var(--secondary-500);
+    --background: var(--bg-gradient);
+  }
+
+  // sticky footer on low content pages
+  html,
+  body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    background-image: var(--bg-gradient);
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    footer {
+      flex-shrink: 0;
+    }
+  }
+</style>
