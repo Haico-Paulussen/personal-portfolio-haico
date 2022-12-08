@@ -1,8 +1,8 @@
 {
-  "name": "accessible-astro-starter",
-  "description": "An Accessible Starter Theme for Astro including several accessiblity features and tools to help you build faster.",
+  "name": "Portfolio Haico",
+  "description": "I'm an UX Designer with a passion for Web Accessibility. Get to know me!",
   "version": "1.6.1",
-  "author": "Mark Teekman",
+  "author": "Haico Paulussen",
   "homepage": "https://accessible-astro.dev",
   "scripts": {
     "dev": "astro dev",
