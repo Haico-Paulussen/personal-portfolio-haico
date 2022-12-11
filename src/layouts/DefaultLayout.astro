@@ -2,7 +2,7 @@
 import '../assets/scss/globals.scss'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
+// import Footer from '../components/Footer.astro'
 
 const {
   title = 'Portfolio Haico',
@@ -32,7 +32,7 @@ const {
       url={
         Astro.site 
           ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
-          : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`
+          : `https://https://haicopaulussen.nl/${title.toLowerCase().replaceAll(' ', '-')}`
       }
       image={image}
     />
@@ -46,7 +46,7 @@ const {
   </body>
 </html>
 
-<style lang="scss">
+<style lang="scss" is:global>
   // theme settings
   :root {
     --primary-color: 254, 174, 40;
@@ -75,6 +75,7 @@ const {
   }
 
   body {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-image: var(--bg-gradient);
@@ -87,4 +88,12 @@ const {
       flex-shrink: 0;
     }
   }
+
+  .text-gradient {
+		background-image: var(--text-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
 </style>
