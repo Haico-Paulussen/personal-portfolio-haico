@@ -23,9 +23,7 @@
     </h1>
     <p>I'm an <strong>UX Designer</strong> with a ❤️ for Web Accessibility</p>
   </hgroup>
-  <div class="scroll">
-    <p>Scroll</p>
-  </div>
+
 </div>
 
 <script>
@@ -147,27 +145,6 @@
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
     font-family: var(--font-family-special);
-  }
-
-  .scroll {
-    position: absolute;
-    bottom: -300px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    p {
-      text-transform: uppercase;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      margin-top: 1rem;
-      margin-left: 50%;
-      width: 1px;
-      height: 400px;
-      background-color: rgb(255, 255, 255, 0.2);
-    }
   }
 
   @keyframes background-pan {

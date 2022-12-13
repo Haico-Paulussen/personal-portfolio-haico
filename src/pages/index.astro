@@ -1,12 +1,59 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
+import SocialCard from '../components/SocialCard.astro'
 ---
 
 <DefaultLayout title="Home">
   <Hero />
-  <div class="container">
-    <h2>More coming soon!</h2>
-    <p class="size-24">Skills, projecten, bio en socials..</p>
+  <div class="container align-center">
+    <div class="scroll">
+      <p>Scroll</p>
+    </div>
   </div>
+  <section class="padding-96">
+    <div class="container space-content">
+      <h2>Socials</h2>
+      <div class="socials">
+        <SocialCard />
+        <SocialCard />
+        <SocialCard />
+      </div>
+    </div>
+  </section>
+  <section class="padding-96">
+    <div class="container">
+      <h2>More coming soon!</h2>
+      <p class="size-24">Skills, projecten, bio en socials..</p>
+    </div>
+  </section>
 </DefaultLayout>
+
+<style>
+  .scroll {
+    margin-top: -15vh;
+  }
+
+  .scroll p {
+    text-transform: uppercase;
+  }
+
+  .scroll::after {
+    content: '';
+    display: block;
+    margin-top: 1rem;
+    margin-left: 50%;
+    width: 1px;
+    height: 400px;
+    background-color: rgb(255, 255, 255, 0.2);
+  }
+
+  .socials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    background-color: #1c1c1c;
+    padding: 5rem 3rem;
+    border-radius: 1rem;
+  }
+</style>
