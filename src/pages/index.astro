@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
-import SocialCard from '../components/SocialCard.astro'
+import Socials from '../components/Socials.astro'
 ---
 
 <DefaultLayout title="Home">
@@ -11,20 +11,11 @@ import SocialCard from '../components/SocialCard.astro'
       <p>Scroll</p>
     </div>
   </div>
-  <section class="padding-96">
-    <div class="container space-content">
-      <h2>Socials</h2>
-      <div class="socials">
-        <SocialCard />
-        <SocialCard />
-        <SocialCard />
-      </div>
-    </div>
-  </section>
+  <Socials /> 
   <section class="padding-96">
     <div class="container">
       <h2>More coming soon!</h2>
-      <p class="size-24">Skills, projecten, bio en socials..</p>
+      <p class="size-24">Skills, projecten, bio..</p>
     </div>
   </section>
 </DefaultLayout>
@@ -48,12 +39,5 @@ import SocialCard from '../components/SocialCard.astro'
     background-color: rgb(255, 255, 255, 0.2);
   }
 
-  .socials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    background-color: #1c1c1c;
-    padding: 5rem 3rem;
-    border-radius: 1rem;
-  }
+  
 </style>

@@ -1,9 +1,11 @@
 <div>
-  <img src="/avatar.png" alt="Profiel foto Haico Paulussen">
+  <img src="/avatar.png" alt="Profiel foto van Haico Paulussen">
   <p aria-hidden="true">Haico Paulussen</p>
 </div>
 
-<style>
+<style lang="scss">
+  @use '../assets/scss/base/breakpoint' as *;
+
   div {
     display: flex;
     align-items: center;
@@ -12,5 +14,13 @@
 
   img {
     max-width: 3rem;
+  }
+
+  p {
+    display: none;
+
+    @include breakpoint(600) {
+      display: block;
+    }
   }
 </style>

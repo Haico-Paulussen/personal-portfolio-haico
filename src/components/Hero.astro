@@ -1,7 +1,7 @@
 <div class="hero align-center">
   <hgroup>
     <h1>
-      Hi! My name is <br>
+      Hi! My name is<br>
       <span class="magic">
         <span class="magic-star">
           <svg viewBox="0 0 512 512">
@@ -23,7 +23,6 @@
     </h1>
     <p>I'm an <strong>UX Designer</strong> with a ❤️ for Web Accessibility</p>
   </hgroup>
-
 </div>
 
 <script>
@@ -51,6 +50,8 @@
 </script>
 
 <style lang="scss">
+  @use '../assets/scss/base/breakpoint' as *;
+
   .hero {
     position: relative;
     height: 100vh;
@@ -61,13 +62,19 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 0 2rem;
     text-align: center;
 
     h1 {
       font-family: var(--font-family-default);
-      font-size: 7rem;
+      font-size: 4.5rem;
       font-weight: 400;
       line-height: 1.2;
+      z-index: 2;
+
+      @include breakpoint(medium) {
+        font-size: 7rem;
+      }
     }
 
     span {
@@ -76,9 +83,10 @@
     }
 
     p {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 300;
       line-height: 1.5;
+      z-index: 2;
     }
 
     &::before,
@@ -93,13 +101,13 @@
     &::before {
       top: -60%;
       left: -30%;
-      background-image: url('/dotgrid-upper.png');
+      background-image: url('/dotgrid-upper-hero.png');
     }
 
     &::after {
       bottom: -90%;
       right: -91%;
-      background-image: url('/dotgrid-lower.png');
+      background-image: url('/dotgrid-lower-hero.png');
     }
   }
 

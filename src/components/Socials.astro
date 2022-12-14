@@ -1,0 +1,77 @@
+---
+import SocialCard from '../components/SocialCard.astro'
+---
+
+<section class="padding-96">
+  <div class="container">
+    <h2>Socials</h2>
+    <div class="socials">
+      <SocialCard
+        url="https://github.com/Haico-Paulussen"
+        icon="mdi:github"
+        platform="GitHub"
+        username="Haico-Paulussen"
+      /> 
+      <SocialCard
+        url="https://github.com/Haico-Paulussen"
+        icon="mdi:linkedin"
+        platform="LinkedIn"
+        username="Haico Paulussen"
+      />
+      <SocialCard 
+        hasSVG={true}
+      >
+        SVG goes here..
+      </SocialCard>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../assets/scss/base/breakpoint' as *;
+
+  section h2 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 8rem; 
+    font-size: 6rem;
+  }
+
+  .socials {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    background-color: #1c1c1c;
+    padding: 7rem 1rem;
+    border-radius: 1rem;
+
+    @include breakpoint(medium) {
+      padding: 7rem 3rem;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 540px;
+      height: 108px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    &::before {
+      top: -42px;
+      left: -90px;
+      background-image: url('/dotgrid-upper-socials.png');
+    }
+
+    &::after {
+      bottom: -43px;
+      right: -90px;
+      background-image: url('/dotgrid-lower-socials.png');
+    }
+
+  }
+</style>
