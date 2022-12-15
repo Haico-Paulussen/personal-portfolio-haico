@@ -44,6 +44,18 @@ import Socials from '../components/Socials.astro'
     opacity: 0.1;
   }
 
+  section h2 {
+    @include size-60;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 300px;
+      height: 3px;
+      background-image: var(--color-gradient);
+    }
+  }
+
   section p {
     @include size-24;
   }
