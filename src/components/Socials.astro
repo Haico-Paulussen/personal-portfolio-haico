@@ -3,8 +3,9 @@ import SocialCard from '../components/SocialCard.astro'
 ---
 
 <section class="padding-96">
+  <div class="section-divider" aria-hidden="true">Socials</div>
   <div class="container">
-    <h2>Socials</h2>
+    <h2>Let's connect</h2>
     <div class="socials">
       <SocialCard
         url="https://github.com/Haico-Paulussen"
@@ -31,10 +32,7 @@ import SocialCard from '../components/SocialCard.astro'
   @use '../assets/scss/base/breakpoint' as *;
 
   section h2 {
-    position: relative;
-    z-index: 2;
     margin-bottom: 8rem; 
-    font-size: 6rem;
   }
 
   .socials {

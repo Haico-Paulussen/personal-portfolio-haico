@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "accessible-astro-components": "^1.6.1",
-    "astro-icon": "^0.7.3"
+    "astro-icon": "^0.7.3",
+    "atropos": "^1.0.2"
   },
   "devDependencies": {
     "astro": "^1.6.3",
