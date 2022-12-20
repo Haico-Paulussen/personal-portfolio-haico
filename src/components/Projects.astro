@@ -1,9 +1,22 @@
+---
+import PrimaryButton from './PrimaryButton.astro'
+---
+
 <section>
   <div class="section-divider" aria-hidden="true">Projects</div>
   <div class="container">
     <div class="space-content">
       <h2>Here are some of my projects</h2>
       <p>User Experience Designer met een passie voor front-end development! Van gebruikersonderzoek tot het ontwerpen van pixel perfect ontwerpen, overal kan ik mijn ei kwijt. De variatie in de werkzaamheden en het proberen te innoveren is iets wat mij drijft. Daarnaast vind ik het erg cool om ook mijn ontwerpen te verwezenlijken door deze zelf te bouwen. Persoonlijke ontwikkeling vind ik erg belangrijk, daarom ben ik altijd bezig met leren: Accessibilty, HTML, CSS, JavaScript, Agile, Scrum en ga zo maar door.</p>
+      <PrimaryButton>Al mijn projecten</PrimaryButton>
+    </div>
+    <div class="projects">
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
     </div>
   </div>
 </section>
@@ -13,5 +26,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5rem;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  .projects div {
+    display: grid;
+    place-items: center;
+    height: 200px;
+    background-color: grey;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .projects div:hover {
+    transform: scale(1.1) rotate(2deg);
+    cursor: pointer;
   }
 </style>
