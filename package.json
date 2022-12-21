@@ -13,7 +13,8 @@
   "dependencies": {
     "accessible-astro-components": "^1.6.1",
     "astro-icon": "^0.7.3",
-    "atropos": "^1.0.2"
+    "atropos": "^1.0.2",
+    "canvas-confetti": "^1.6.0"
   },
   "devDependencies": {
     "astro": "^1.6.3",
