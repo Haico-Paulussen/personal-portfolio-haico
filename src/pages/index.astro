@@ -34,9 +34,8 @@ import Socials from '../components/Socials.astro'
 
   confettiButton.addEventListener('click', () => {
     confetti({
-      angle: randomInRange(55, 125),
-      spread: randomInRange(50, 70),
-      particleCount: randomInRange(50, 100),
+      particleCount: 100,
+      spread: 70,
       origin: { y: 0.6 }
     })
   })
@@ -47,24 +46,31 @@ import Socials from '../components/Socials.astro'
 
   section {
     position: relative;
+    margin-top: 40vh;
     padding: 12rem 0 30rem;
   }
 
   section .section-divider {
     position: absolute;
     top: 0;
-    left: 2rem;
-    font-size: 10rem;
+    left: 1rem;
+    font-size: 4rem;
     text-transform: uppercase;
     font-family: var(--font-family-special);
     font-weight: 700;
-    letter-spacing: 1rem;
+    letter-spacing: 0.4rem;
     opacity: 0.1;
     user-select: none;
+
+    @media (min-width: 768px) {
+      left: 2rem;
+      font-size: 10rem;
+      letter-spacing: 1rem;
+    }
   }
 
   section h2 {
-    @include size-60;
+    @include size-48;
 
     &::before {
       content: '';
@@ -76,11 +82,15 @@ import Socials from '../components/Socials.astro'
   }
 
   section p {
-    @include size-24;
+    @include size-20;
   }
 
   .scroll {
     margin-top: -15vh;
+
+    @media (max-height: 768px) {
+      margin-top: 0;
+    }
   }
 
   .scroll p {
@@ -98,18 +108,22 @@ import Socials from '../components/Socials.astro'
   }
 
   .secret {
-    font-size: 10rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 8rem 0 4rem;
   
     button {
+      position: absolute;
       display: inline-block;
-      margin-left: -70px;
       border: none;
-      padding: 0;
+      transform: rotate(-40deg);
       transition: all 0.5s ease;
 
       &:hover,
       &:focus {
-        margin-left: 0;
+        margin-top: -255px;
+        font-size: 10rem;
       }
     }
   }
