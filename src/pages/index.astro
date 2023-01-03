@@ -18,43 +18,26 @@ import Socials from '../components/Socials.astro'
   <Projects />
   <Bio />
   <Socials /> 
-  <div class="secret margin-128 top">
-    <button title="Je hebt een Easter Egg gevonden, klik voor confetti!">🎉</button>
-  </div>
 </DefaultLayout>
-
-<script>
-  import confetti from 'canvas-confetti'
-
-  const confettiButton = document.querySelector('.secret button')
-
-  function randomInRange (min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  confettiButton.addEventListener('click', () => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    })
-  })
-</script>
 
 <style lang="scss" is:global>
   @use '../assets/scss/base/size' as *;
 
   section {
     position: relative;
-    margin-top: 40vh;
+    margin-top: 20vh;
     padding: 12rem 0 30rem;
+
+    @media (min-width: 768px) {
+      margin-top: 40vh;
+    }
   }
 
   section .section-divider {
     position: absolute;
     top: 0;
     left: 1rem;
-    font-size: 4rem;
+    font-size: 4.5rem;
     text-transform: uppercase;
     font-family: var(--font-family-special);
     font-weight: 700;
@@ -107,24 +90,4 @@ import Socials from '../components/Socials.astro'
     background-color: rgb(255, 255, 255, 0.2);
   }
 
-  .secret {
-    position: relative;
-    display: grid;
-    place-items: center;
-    padding: 8rem 0 4rem;
-  
-    button {
-      position: absolute;
-      display: inline-block;
-      border: none;
-      transform: rotate(-40deg);
-      transition: all 0.5s ease;
-
-      &:hover,
-      &:focus {
-        margin-top: -255px;
-        font-size: 10rem;
-      }
-    }
-  }
 </style>

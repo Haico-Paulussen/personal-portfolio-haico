@@ -5,11 +5,11 @@ import ProjectCard from './ProjectCard.astro'
 <section>
   <div class="section-divider" aria-hidden="true">Projects</div>
   <div class="container">
-    <div class="space-content">
+    <div class="space-content animate">
       <h2>Here are some of my projects</h2>
       <p>Ik heb verschillende projecten gedaan in mijn loopbaan. Hier een kleine greep uit de projecten waar ik trots op ben. Ik heb in sommige projecten ook een andere rol bekleed, dit vind je terug in de tags. Case studies zullen in de toekomst worden toegevoegd!</p>
     </div>
-    <div class="projects">
+    <div class="projects animate">
       <ProjectCard 
         url="https://omnichannel.nl"
         title="OmniChannel"
@@ -56,7 +56,7 @@ import ProjectCard from './ProjectCard.astro'
     grid-template-columns: 1fr;
     grid-gap: 5rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1000px) {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -67,7 +67,7 @@ import ProjectCard from './ProjectCard.astro'
     grid-template-columns: 1fr;
     grid-gap: 2rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1000px) {
       grid-template-columns: 1fr 1fr;
     }
   }

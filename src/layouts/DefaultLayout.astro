@@ -2,7 +2,7 @@
 import '../assets/scss/globals.scss'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
-// import Footer from '../components/Footer.astro'
+import Footer from '../components/Footer.astro'
 
 const {
   title = 'Portfolio Haico',
@@ -42,9 +42,25 @@ const {
     <main id="main-content">
       <slot />
     </main>
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible')
+      }
+    })
+  }, { threshold: 0.25 })
+    
+  const elements = document.querySelectorAll('.animate')
+    
+  elements.forEach((element) => {
+    observer.observe(element)
+  })
+</script>
 
 <style lang="scss" is:global>
   // theme settings
@@ -97,4 +113,20 @@ const {
 		background-size: 400%;
 		background-position: 0%;
 	}
+
+  .animate {
+    opacity: 0;
+    transform: translateY(5rem);
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.1s;
+
+    + .animate {
+      transition-delay: 0.3s;
+    }
+  }
+
+  .is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
